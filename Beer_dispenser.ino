@@ -4,51 +4,9 @@
 #include <Wire.h> //OLED 헤더파일 지정 
 #include <DHT.h> //온습도 센서 헤더파일 지정 
 #include <SoftwareSerial.h> //TX,RX핀 새로지정 헤더파일 지정 
-#include "pitches.h"
 
 SoftwareSerial Mega(D2, D8);
 
-int Starwars[] = {
-  NOTE_D3,
-  NOTE_D3,
-  NOTE_D3,
-  NOTE_G3,
-  NOTE_D4,
-  NOTE_C4,
-  NOTE_B3,
-  NOTE_A3,
-  NOTE_G4,
-  NOTE_D4,
-  NOTE_C4,
-  NOTE_B3,
-  NOTE_A3,
-  NOTE_G4,
-  NOTE_D4,
-  NOTE_C4,
-  NOTE_B4,
-  NOTE_C4,
-  NOTE_A4,
-
-  NOTE_D3,
-  NOTE_D3,
-  NOTE_G3,
-  NOTE_D4,
-  NOTE_C4,
-  NOTE_B3,
-  NOTE_A3,
-  NOTE_G4,
-  NOTE_D4,
-  NOTE_C4,
-  NOTE_B3,
-  NOTE_A3,
-  NOTE_G4,
-  NOTE_D4,
-  NOTE_C4,
-  NOTE_B4,
-  NOTE_C4,
-  NOTE_A4,
-  NOTE_G4
-};
 
 int StarwarsDuration[] = {
   8, 8, 8, 2, 2, 8, 8, 8, 2, 4, 8, 8, 8, 2, 4, 8, 8, 8, 4,
@@ -67,8 +25,8 @@ U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 #define DHTTYPE DHT11
 
 
-const char* ssid = "s8";
-const char* password = "13271327"; // 공유기 id와 비밀번호를 전역포인터로 설정
+const char* ssid = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD"; // 공유기 id와 비밀번호를 전역포인터로 설정
 
 WiFiServer server(80);
 DHT Therm(D5, DHTTYPE);
