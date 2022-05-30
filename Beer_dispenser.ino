@@ -25,8 +25,8 @@ U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 #define DHTTYPE DHT11
 
 
-const char* ssid = "YOUR_SSID";
-const char* password = "YOUR_PASSWORD"; // 공유기 id와 비밀번호를 전역포인터로 설정
+const char* ssid = "RND_317";
+const char* password = "rnd211028"; // 공유기 id와 비밀번호를 전역포인터로 설정
 
 WiFiServer server(80);
 DHT Therm(D5, DHTTYPE);
@@ -37,7 +37,7 @@ void setup() {
   Serial.begin(115200);
   u8g2.begin();
   Therm.begin();
-  Mega.begin(300);
+  Mega.begin(38400);
   delay(10);
 
 
@@ -134,10 +134,8 @@ void loop() {
     float t = Therm.readTemperature();
 
     if (req.indexOf("/beer") != -1) { // '/beer'라는 값이 서버 아이피 뒷자리면 릴레이 열기
-      Mega.println(2);
-      Mega.println(2);
-      Mega.println(4);
       Mega.print(4);
+      delay(10);
       got = 1;
     }
 
@@ -151,17 +149,12 @@ void loop() {
 
     else if (req.indexOf("/fridgeon") != -1) {
       Mega.print(2);
-      Mega.print(2);
-      Mega.println(2);
       delay(10);
       got = 1;
     }
 
     else if (req.indexOf("/fridgeoff") != -1) {
-      Mega.print(2);
-      Mega.print(2);
       Mega.print(3);
-      Mega.println(3);
       delay(10);
       got = 1;
     }
