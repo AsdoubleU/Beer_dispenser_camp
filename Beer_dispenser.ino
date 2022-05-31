@@ -25,8 +25,8 @@ U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 #define DHTTYPE DHT11
 
 
-const char* ssid = "RND_317";
-const char* password = "rnd211028"; // 공유기 id와 비밀번호를 전역포인터로 설정
+const char* ssid = "YOUR_SSID_ID";
+const char* password = "YOUR_SSID_PASSWORD"; // 공유기 id와 비밀번호를 전역포인터로 설정
 
 WiFiServer server(80);
 DHT Therm(D5, DHTTYPE);
